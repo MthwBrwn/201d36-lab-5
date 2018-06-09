@@ -131,7 +131,7 @@ function multiplyArray(multArr) { //eslint-disable-line
   // console.log('prodOfTwo is ;' , prodOfTwo [0]);
   var prodOfThree = multiply(prodOfTwo[0], multArr[2]);
 
-  var condLine = ('The numbers ' + multArr[0]+','+multArr[1]+',' +multArr[2]+ ' have a product of '+prodOfThree[0]+'.');
+  var condLine = ('The numbers ' +multArr+ ' have a product of '+prodOfThree[0]+'.');
   // "The numbers 2,3,4 have a product of 24."
   console.log(condLine);
   return [prodOfThree[0] , condLine];
@@ -143,6 +143,8 @@ console.log('test array sum is ',multiplyArray(testArray)[0]);
 
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyArray(testArray);
+
+ 
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
@@ -166,10 +168,19 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  var currCount =[1,''];
+  for (var i = 0 ; i < dynamicArray.length;i++) {  
+    currCount = multiply(currCount[0], dynamicArray[i]);
+    console.log(currCount[0]);
+  }
+  var condMsg = ('The numbers ' +dynamicArray+ ' have a product of '+currCount[0]+'.');
+  console.log(condMsg);
+  return [currCount[0], condMsg];
 }
 
+multiplyAnyArray(testDynamicArray);
+
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
