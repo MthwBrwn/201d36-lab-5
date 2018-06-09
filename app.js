@@ -56,7 +56,7 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
   var sumOf2 = sum(a,b);
   var sumOf3= sum(sumOf2[0], c);
-  console.log('sumOf2 is :', sumOf2[0  ]);
+  console.log('sumOf2 is :', sumOf2[0 ]);
   console.log('sumOf3 :', sumOf3 [0]);
   var prodOf2 = multiply(a,b);
   var prodOf3 = multiply(prodOf2[0], c);
@@ -66,7 +66,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
 
   return [sumOf3[0], prodOf3 [0], theMsg3rd, theMsg4th];
 }
-   
+
 sumAndMultiply (4,7,5);
 
 
@@ -95,7 +95,7 @@ function sumArray(sumArr) { //eslint-disable-line
   // console.log('sumOfTwo is ;' , sumOfTwo [0]);
   var sumOfThree =sum (sumOfTwo[0], sumArr[2]);
   // console.log(sumArr [0]+','+sumArr[1]+','+sumArr[2]+ ' was passed in as an array of numbers, and '+sumOfThree[0]+' is their sum.');
-  var condLine = sumArr [0]+','+sumArr[1]+','+sumArr[2]+ ' was passed in as an array of numbers, and '+sumOfThree[0]+' is their sum.'
+  var condLine = sumArr [0]+','+sumArr[1]+','+sumArr[2]+ ' was passed in as an array of numbers, and '+sumOfThree[0]+' is their sum.';
 
   return [sumOfThree[0] , condLine];
 
@@ -122,14 +122,29 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+testArray = [2, 3, 4];
+
 function multiplyArray(multArr) { //eslint-disable-line
+
+  var prodOfTwo = multiply(multArr[0], multArr[1]);
+  // console.log('multArr is :' , multArr);
+  // console.log('prodOfTwo is ;' , prodOfTwo [0]);
+  var prodOfThree = multiply(prodOfTwo[0], multArr[2]);
+
+  var condLine = ('The numbers ' + multArr[0]+','+multArr[1]+',' +multArr[2]+ ' have a product of '+prodOfThree[0]+'.');
+  // "The numbers 2,3,4 have a product of 24."
+  console.log(condLine);
+  return [prodOfThree[0] , condLine];
 
 }
 
-// Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+multiplyArray(testArray);
+console.log('test array sum is ',multiplyArray(testArray)[0]);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+// Here is the test for multiplyArray(); uncomment it to run it
+testMultiplyArray(testArray);
+
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
 
